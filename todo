@@ -1,0 +1,5 @@
+neovim:
+  - add ts/scss/etc support
+  - language servers
+  - prettier, tree, git, and other devtools
+  - line numbers (relative and absolute) - also learn vim better
