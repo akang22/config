@@ -13,14 +13,11 @@ let g:neoformat_try_node_exe = 1
 
 call plug#begin()
 "general
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'shaunsingh/nord.nvim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 "dev
 Plug 'sbdchd/neoformat'
-Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
 
 "webdev
