@@ -5,6 +5,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+PATH=$PATH:~/.emacs.d/bin:/usr/local/opt/libarchive/bin
+export PYTHONPATH="${PYTHONPATH}:/usr/local/opt/notmuch/libexec/lib/python3.10/site-packages"
+
+
 set -o vi
 
 alias ls='gls --color=auto'
@@ -22,8 +26,6 @@ alias branchname='git rev-parse --abbrev-ref HEAD'
 
 alias update='brew update && brew upgrade'
 alias restart='exec zsh -l'
-PATH=$PATH:~/.emacs.d/bin:/usr/local/opt/libarchive/bin
-export PYTHONPATH="${PYTHONPATH}:/usr/local/opt/notmuch/libexec/lib/python3.10/site-packages"
 alias yt-dlp='yt-dlp -f "bestvideo[height<=?1080]+bestaudio/best" --embed-subs --write-auto-subs --sub-lang "en.*"'
 alias mangadex-dl='cd ~; source venv/bin/activate; python3 mangadex-dl/mangadex-dl.py -a'
 copy-to-kobo() {
@@ -82,3 +84,4 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOBIN:$PATH
 
+PATH=$PATH:~/.emacs.d/bin
