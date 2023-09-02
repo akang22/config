@@ -19,12 +19,26 @@ Plug 'vim-airline/vim-airline'
 "dev
 Plug 'sbdchd/neoformat'
 Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "webdev
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', { 'for':  ['ts', 'tsx', 'js', 'jsx'] }
+
+"rust
+Plug 'rust-lang/rust.vim'
+Plug 'fannheyward/coc-rust-analyzer', {'for': ['rs', 'rlib'] }
+
+"math
+Plug 'lervag/vimtex', { 'for': ['tex'] }
+
+"fun
+Plug 'dansomething/vim-hackernews'
+
 
 call plug#end()
 
 "nord
 colorscheme nord
+
+"math
+let g:vimtex_view_method = 'zathura'

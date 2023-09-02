@@ -1,0 +1,5 @@
+new-session -c ~/ppp -s ppp
+set-option -t ppp:0 remain-on-exit
+split-window -h
+send-keys 'source venv/bin/activate' Enter
+split-window -v 'vim todo.txt; exec zsh -l'
