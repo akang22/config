@@ -1,3 +1,6 @@
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -25,6 +28,12 @@ alias yt-dlp='yt-dlp -f "bestvideo[height<=?1080]+bestaudio/best" --embed-subs -
 alias mangadex-dl='cd ~; source venv/bin/activate; python3 mangadex-dl/mangadex-dl.py -a'
 copy-to-kobo() {
     (tar cf - *) | pv | (cd /volumes/koboereader/.nomedia/x64/; tar -xf -)
+}
+alert() {
+    osascript -e 'display notification "Exit Code: '$?'" with title "Task Finished" sound name "Submarine"'
+}
+tmux-new() {
+    tmux new -A -s ${PWD##*/}
 }
 alias screensaver='open -a ScreenSaverEngine'
 
@@ -56,4 +65,20 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+bindkey '^R' history-incremental-search-backward
+export PATH=/Users/bytedance/.local/bin:$PATH
+
+export GOROOT="$(brew --prefix golang)/libexec"
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOROOT/bin:$GOBIN:$PATH
 
